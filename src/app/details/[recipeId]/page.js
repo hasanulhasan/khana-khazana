@@ -6,6 +6,19 @@ import Step from "@/components/Details/Step";
 import FavoriteButton from "@/components/FavoriteButton";
 import Nav from "@/components/Home/Nav";
 
+export async function generateMetadata({ params: { recipeId } }){
+  const recipe = await getSingleRecipe(recipeId);
+
+  return{
+    title: `${recipe?.name}`, 
+    description: `${recipe?.description}`,
+    openGraph: {
+      images: [recipe?.image]
+    }
+  }
+
+}
+
 
 export default async function RecipeDetailsPage({ params: { recipeId } }) {
   const currentURL = null;
