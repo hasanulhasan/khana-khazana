@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { User } from "../models/usersModel";
 
 const { Recipe } = require("../models/recipeModel");
@@ -35,6 +36,22 @@ const findUserInfo = async (userInfo) => {
   }
 }
 
+const updateFavorite = async (recipeId, userId) => {
+  const user = await User.findById(userId);
+  
+  if(user){
+    const foundRecipe = user?.favourites?.find(id=> id.toString() === recipeId);
+
+    if(foundRecipe){
+      user.favourites.pull(new mongoose.Types.ObjectId(recipeId))
+    }
+    else{
+      user.favourites.push(new mongoose.Types.ObjectId(recipeId))
+    }
+    user.save();
+  }
+}
 
 
-export { getAllRecipes, getSingleRecipe, getAllCategory, getRecipeByCategory, createUser, findUserInfo};
+
+export { getAllRecipes, getSingleRecipe, getAllCategory, getRecipeByCategory, createUser, findUserInfo, updateFavorite};

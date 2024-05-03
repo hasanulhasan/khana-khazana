@@ -1,6 +1,6 @@
 'use server'
 
-import { createUser, findUserInfo } from "@/app/db/queries";
+import { createUser, findUserInfo, updateFavorite } from "@/app/db/queries";
 import { redirect } from "next/navigation";
 
 async function registerUser(formData) {
@@ -22,4 +22,13 @@ const getLoginInfo = async (formData) => {
   }
 }
 
-export {registerUser, getLoginInfo}
+const addFavorite = async (recipeId, userId) => {
+  try {
+    await updateFavorite(recipeId, userId)
+  } catch (error) {
+    throw error
+  }
+
+}
+
+export {registerUser, getLoginInfo, addFavorite}
