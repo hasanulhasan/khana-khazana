@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { mongoConnect } from "@/services/mongoDbConnect";
+import AuthProvider from "@/auth/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +14,11 @@ export default async function RootLayout({ children }) {
   await mongoConnect();
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <AuthProvider>
+        {children}
+        </AuthProvider>
+        </body>
     </html>
   );
 }

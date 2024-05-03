@@ -2,20 +2,20 @@ import Hero from "@/components/Home/Hero";
 import Nav from "@/components/Home/Nav";
 import Recipes from "@/components/Home/Recipes";
 import Sidebar from "@/components/Home/Sidebar";
-import { getAllRecipes } from "./db/queries";
+import { getAllCategory, getAllRecipes } from "./db/queries";
 
 export default async function Home() {
   const recipes = await getAllRecipes();
-  // console.log(recipes);
+  const categories = await getAllCategory();
 
   return (
     <div>
       <Nav />
       <main>
         <Hero />
-        <section class="container py-8">
-          <div class="grid grid-cols-12 py-4">
-            <Sidebar />
+        <section className="container py-8">
+          <div className="grid grid-cols-12 py-4">
+            <Sidebar categories={categories} />
             <Recipes recipes={recipes} />
           </div>
         </section>
