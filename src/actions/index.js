@@ -1,6 +1,7 @@
 'use server'
 
 import { createUser, findUserInfo, updateFavorite } from "@/app/db/queries";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 async function registerUser(formData) {
@@ -28,7 +29,7 @@ const addFavorite = async (recipeId, userId) => {
   } catch (error) {
     throw error
   }
-
+  revalidatePath('/details');
 }
 
 export {registerUser, getLoginInfo, addFavorite}
