@@ -6,24 +6,22 @@ import Step from "@/components/Details/Step";
 import FavoriteButton from "@/components/FavoriteButton";
 import Nav from "@/components/Home/Nav";
 
-export async function generateMetadata({ params: { recipeId } }){
+export async function generateMetadata({ params: { recipeId } }) {
   const recipe = await getSingleRecipe(recipeId);
 
-  return{
-    title: `${recipe?.name}`, 
+  return {
+    title: `${recipe?.name}`,
     description: `${recipe?.description}`,
     openGraph: {
-      images: [recipe?.image]
-    }
-  }
-
+      images: [recipe?.image],
+    },
+  };
 }
 
-
 export default async function RecipeDetailsPage({ params: { recipeId } }) {
-  const currentURL = null;
-  const recipe = await getSingleRecipe(recipeId);
   
+  const recipe = await getSingleRecipe(recipeId);
+
   return (
     <div>
       <Nav />
@@ -121,8 +119,8 @@ export default async function RecipeDetailsPage({ params: { recipeId } }) {
               </div>
 
               <div className="flex gap-4 justify-end">
-                <FavoriteButton recipeId={recipe?._id}/>
-                  <ShareSocial currentURL={currentURL}/>
+                <FavoriteButton recipeId={recipe?._id} />
+                <ShareSocial />
               </div>
             </div>
           </div>

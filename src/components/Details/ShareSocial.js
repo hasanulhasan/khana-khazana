@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ShareModal from "./ShareModal";
 
-export default function ShareSocial({ currentURL }) {
+export default function ShareSocial() {
   const [open, setOpen] = useState(false);
   return (
     <>
