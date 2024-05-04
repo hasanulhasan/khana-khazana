@@ -7,13 +7,14 @@ export async function generateMetadata({ params: { ctname } }) {
   const recipe = recipes.find(recipe => recipe?.category === ctname);
 
   return {
-    title: `${recipe.category}`,
+    title: `${recipe?.category}`,
     description: `khana kahzana desciption page`,
   };
 }
 
 export default async function CategoryPage({ params: { ctname } }) {
   const recipes = await getRecipeByCategory(ctname);
+  console.log(ctname)
   
   return (
     <div>

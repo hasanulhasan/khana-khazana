@@ -7,7 +7,7 @@ import {
   WhatsappShareButton,
 } from "react-share";
 
-export default function ShareModal({open, setOpen}) {
+export default function ShareModal({ open, setOpen }) {
   return (
     <div className="flex gap-4 p-6 px-10 absolute bg-gray-300 left-1/2 top-1/2 rounded-md">
       <TelegramShareButton url={window.location.href}>
@@ -15,9 +15,9 @@ export default function ShareModal({open, setOpen}) {
           type="button"
           data-twe-ripple-init
           data-twe-ripple-color="light"
-          class="mb-2 inline-block rounded bg-[#0088cc] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="mb-2 inline-block rounded bg-[#0088cc] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
         >
-          <span class="[&>svg]:h-4 [&>svg]:w-4">
+          <span className="[&>svg]:h-4 [&>svg]:w-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -34,9 +34,9 @@ export default function ShareModal({open, setOpen}) {
           type="button"
           data-twe-ripple-init
           data-twe-ripple-color="light"
-          class="mb-2 inline-block rounded bg-[#128c7e] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="mb-2 inline-block rounded bg-[#128c7e] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
         >
-          <span class="[&>svg]:h-4 [&>svg]:w-4">
+          <span className="[&>svg]:h-4 [&>svg]:w-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -53,9 +53,9 @@ export default function ShareModal({open, setOpen}) {
           type="button"
           data-twe-ripple-init
           data-twe-ripple-color="light"
-          class="mb-2 inline-block rounded bg-[#1877f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="mb-2 inline-block rounded bg-[#1877f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
         >
-          <span class="[&>svg]:h-4 [&>svg]:w-4">
+          <span className="[&>svg]:h-4 [&>svg]:w-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -72,9 +72,9 @@ export default function ShareModal({open, setOpen}) {
           type="button"
           data-twe-ripple-init
           data-twe-ripple-color="light"
-          class="mb-2 inline-block rounded bg-[#0077b5] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="mb-2 inline-block rounded bg-[#0077b5] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
         >
-          <span class="[&>svg]:h-4 [&>svg]:w-4">
+          <span className="[&>svg]:h-4 [&>svg]:w-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -86,7 +86,12 @@ export default function ShareModal({open, setOpen}) {
           </span>
         </button>
       </LinkedinShareButton>
-      <div onClick={()=> setOpen(!open)} className="bg-red-600 px-2 text-white font-extrabold rounded-bl-md absolute top-0 right-0 cursor-pointer rounded-tr-md">X</div>
+      <div
+        onClick={() => setOpen(!open)}
+        className="bg-red-600 px-2 text-white font-extrabold rounded-bl-md absolute top-0 right-0 cursor-pointer rounded-tr-md"
+      >
+        X
+      </div>
     </div>
   );
 }

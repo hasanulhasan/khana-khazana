@@ -119,7 +119,7 @@ export default async function RecipeDetailsPage({ params: { recipeId } }) {
               </div>
 
               <div className="flex gap-4 justify-end">
-                <FavoriteButton recipeId={recipe?._id} />
+                <FavoriteButton recipeId={recipeId} />
                 <ShareSocial />
               </div>
             </div>

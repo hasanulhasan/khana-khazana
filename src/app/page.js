@@ -12,7 +12,7 @@ export default async function Home() {
     <div>
       <Nav />
       <main>
-        <Hero />
+        {/* <Hero /> */}
         <section className="container py-8">
           <div className="grid grid-cols-12 py-4">
             <Sidebar categories={categories} />

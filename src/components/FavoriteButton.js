@@ -12,9 +12,9 @@ export default function FavoriteButton({recipeId}) {
   const favoriteSelect = auth?.favourites?.find(id => id === recipeId);
   const [isFavorite, setIsFavorite] = useState(favoriteSelect);
 
-  const handleFavorite = async () => {
+  const handleFavorite = () => {
     if (auth) {
-      await addFavorite(recipeId, auth?._id)
+      addFavorite(recipeId, auth?._id)
       setIsFavorite(!isFavorite);
     } else {
       router.push("/login");

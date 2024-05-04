@@ -772,13 +772,13 @@ video {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\.\/assets\/images\/cover\.png\'\)\] {
-  background-image: url('./assets/images/cover.png');
-}
+/* .bg-\[url\(\'\.\/assets\/images\/cover\.png\'\)\] {
+  background-image: url('/public/assets/images/cover.png');
+} */
 
-.bg-cover {
+/* .bg-cover {
   background-size: cover;
-}
+} */
 
 .object-contain {
   -o-object-fit: contain;

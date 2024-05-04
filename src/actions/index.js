@@ -29,7 +29,7 @@ const addFavorite = async (recipeId, userId) => {
   } catch (error) {
     throw error
   }
-  revalidatePath('/details');
+  revalidatePath('/details/[recipeId]', 'page');
 }
 
 export {registerUser, getLoginInfo, addFavorite}
